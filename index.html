@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A visual guide to men's stress, hormones, mood and energy.">
+
 <title>Men's Health | Stress, Hormones & Wellbeing</title>
 <style>
 :root{
@@ -33,6 +33,12 @@ h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.02;letter-spacing:-.055em;marg
 .pulse{font-size:5rem;color:var(--lime);font-weight:200;z-index:1;text-shadow:0 0 40px #e6f04455}
 .hero-label{position:absolute;bottom:18px;left:20px;color:#d5d9d5;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
 .section{margin:26px 0 62px}
+.region{padding-top:12px}
+.region>.section-head{padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:28px}
+.region>.section-head h2{font-size:clamp(1.8rem,3.5vw,2.6rem)}
+.subsection{margin:34px 0 48px;padding-left:18px;border-left:2px solid #39434a}
+.subsection .section-head h2{font-size:clamp(1.35rem,2.5vw,1.8rem)}
+@media(max-width:680px){.subsection{padding-left:12px}}
 .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}
 .kicker{color:var(--lime);font-size:.75rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
 h2{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.1;letter-spacing:-.04em;margin:7px 0 0}
@@ -61,7 +67,9 @@ h2{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.1;letter-spacing:-.04em;marg
 .cycle-node{padding:14px;border:1px solid var(--line);border-radius:14px;background:#171c21;min-height:74px}
 .cycle-node b{display:block;font-size:.94rem}
 .cycle-node span{font-size:.82rem;color:var(--muted)}
-.cycle-center{width:106px;height:106px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--lime);color:var(--lime);font-size:2.4rem;box-shadow:0 0 35px #e6f04422}
+.cycle-center{width:106px;height:106px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--lime);color:var(--lime);box-shadow:0 0 35px #e6f04422}
+.cycle-center svg{width:78px;height:54px;display:block;overflow:visible}
+.cycle-center svg path{fill:none;stroke:var(--lime);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 5px #e6f04466)}
 .arrow{color:var(--lime);font-size:1.4rem;text-align:center}
 .symptoms{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .symptom{padding:17px;border-radius:15px;background:#171c21;border:1px solid var(--line);display:flex;gap:13px;align-items:flex-start}
@@ -72,31 +80,128 @@ h2{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.1;letter-spacing:-.04em;marg
 .footer{border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 @media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:26px}.hero-art{min-height:190px}.two{grid-template-columns:1fr}.section-head{display:block}.section-intro{margin-top:12px}.cycle-diagram{grid-template-columns:1fr 70px 1fr;gap:7px}.cycle-center{width:68px;height:68px;font-size:1.8rem}.cycle-node{padding:10px}.symptoms{grid-template-columns:1fr}.nav{padding:12px 16px}.navlinks{gap:10px}.navlinks a{font-size:.8rem}main{padding:28px 16px 60px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.symptoms{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.symptom{padding:16px;border-radius:15px;background:#171c21;border:1px solid var(--line);display:flex;gap:12px;align-items:flex-start}.symptom-icon{width:33px;height:33px;flex:none;border-radius:10px;background:#e6f04418;color:var(--lime);display:grid;place-items:center}.symptom b{display:block;margin-bottom:3px}.symptom p{margin:0;color:var(--muted);font-size:.88rem}.grid.three{grid-template-columns:repeat(3,1fr)}.grid.four{grid-template-columns:repeat(4,1fr)}.number{width:38px;height:38px;border-radius:12px;background:#e6f0441c;color:var(--lime);display:grid;place-items:center;font-weight:900;margin-bottom:13px}
+@media(max-width:850px){.grid.three{grid-template-columns:1fr}.grid.four{grid-template-columns:repeat(2,1fr)}.symptoms{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.symptoms{grid-template-columns:1fr}.grid.two,.grid.four{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
 <header>
   <nav class="nav" aria-label="Main navigation">
     <div class="brand"><span class="brand-mark"></span> MEN'S HEALTH / FIELD GUIDE</div>
-    <div class="navlinks"><a href="#stress">Stress management</a><a href="#hormones">Hormones & mood</a></div>
+    <div class="navlinks"><a href="#mental-health-region">Mental Health</a><a href="#andropause-region">Andropause</a><a href="#stress-region">Stress</a><a href="#toolkit-region">Toolkit</a></div>
   </nav>
 </header>
 <main>
   <section class="hero">
     <div>
       <div class="eyebrow">Men's health · Foundations</div>
-      <h1>Stress, hormones<br>&amp; everyday wellbeing.</h1>
-      <p>A visual guide to two connected themes: practical ways to manage stress, and the relationship between stress, mood, energy and hormonal health.</p>
+      <h1>Men's health &amp; wellbeing.</h1>
     </div>
     <div class="hero-art" aria-label="Abstract illustration representing balance and wellbeing">
       <div class="pulse">∞</div><div class="hero-label">Awareness · Balance · Consistency</div>
     </div>
   </section>
 
-  <section class="section" id="stress">
+  <section class="section region" id="mental-health-region">
+  <div class="section-head"><div><div class="kicker">1 / Mental wellbeing</div><h2>Mental Health</h2></div></div>
+  <section class="section subsection" id="mental-health">
+    <div class="section-head"><div><div class="kicker">1.1 / Recognize the signs</div><h2>Signs & symptoms of poor mental health</h2></div></div>
+    <div class="grid two">
+      <div class="card"><h3>Persistent worrying</h3><p>Worry that feels difficult to control.</p></div>
+      <div class="card"><h3>Overwhelming sadness</h3><p>Persistent or overwhelming feelings of sadness.</p></div>
+      <div class="card"><h3>Social withdrawal</h3><p>Pulling away from friends and family.</p></div>
+      <div class="card"><h3>Difficulty concentrating</h3><p>Finding it harder to focus.</p></div>
+      <div class="card"><h3>Tiredness or fatigue</h3><p>Feeling persistently tired or low on energy.</p></div>
+      <div class="card"><h3>Physical symptoms</h3><p>For example, shortness of breath or headaches.</p></div>
+    </div>
+    <h3>⚠ More common patterns in men</h3>
+    <div class="grid two">
+      <div class="card"><h3>Substance abuse</h3><p>Using substances as a way of coping.</p></div>
+      <div class="card"><h3>Anger & irritability</h3><p>Distress expressed through frustration or a shorter temper.</p></div>
+      <div class="card"><h3>Working obsessively</h3><p>Staying constantly busy or over-investing in work.</p></div>
+      <div class="card"><h3>Sleep problems</h3><p>Difficulty sleeping or disrupted rest.</p></div>
+      <div class="card"><h3>Reckless behaviour</h3><p>Taking risks or acting impulsively.</p></div>
+    </div>
+    <div class="note">These are possible signs, not a diagnostic checklist. Experiences differ between individuals, and no single behaviour proves that someone has a mental health condition.</div>
+  </section>
+  <section class="section subsection" id="silence">
+    <div class="section-head"><div><div class="kicker">1.2 / Why speaking up matters</div><h2>The Cost of Silence</h2></div><p class="section-intro">When concerns go unexpressed and symptoms are ignored, the effects can build over time and touch many areas of health.</p></div>
+    <div class="grid two"><div class="card"><div class="kicker">Stress response</div><h3>Chronic stress response</h3><p>Prolonged stress can keep the body's stress-response systems activated. Chronic stress is associated with effects on immune function and overall health.</p></div><div class="card"><div class="kicker">Delayed attention</div><h3>Ignored symptoms</h3><p>Physical symptoms may be dismissed or minimised until they become more serious and require more intensive attention.</p></div><div class="card"><div class="kicker">Disconnection</div><h3>Emotional isolation</h3><p>Unspoken pressure can create isolation, disconnecting men from potential support and compounding mental health challenges.</p></div></div>
+    <div class="tip"><strong>The good news:</strong> These patterns can change. Early support and sustained care can improve wellbeing; it is worthwhile to seek help at any stage.</div>
+  </section>
+</section>
+
+  <section class="section region" id="andropause-region">
+  <div class="section-head"><div><div class="kicker">2 / Midlife and hormonal health</div><h2>Andropause</h2></div></div>
+  <section class="section subsection" id="andropause-what">
+    <div class="section-head"><div><div class="kicker">2.1 / Midlife hormonal health</div><h2>What is Andropause?</h2></div><p class="section-intro">Andropause is a commonly used term for age-associated changes in men's hormones and wellbeing. Unlike menopause, these changes are generally gradual and vary considerably between individuals.</p></div>
+    <div class="grid two"><div class="card"><div class="kicker">A gradual process</div><h3>Not a single moment in time</h3><p>The supplied material describes testosterone as declining by around 1–2% per year after age 30 and frames the process as unfolding over decades rather than months. The rate is not universal; individual levels and trajectories vary.</p><div class="grid three" style="margin-top:18px"><div><b style="color:var(--lime)">30+</b><p>Age-associated decline may begin</p></div><div><b style="color:var(--lime)">40–50</b><p>Changes may become noticeable for some</p></div><div><b style="color:var(--lime)">60–70</b><p>Individual experiences vary</p></div></div></div><div class="card"><div class="kicker">Possible changes</div><h3>Physical & mental effects</h3><p><b>Physical:</b> muscle loss, increased body fat and reduced energy.</p><p style="margin-top:12px"><b>Mental:</b> mood shifts, cognitive changes and irritability.</p><div class="note">These changes have many possible causes and do not, by themselves, establish low testosterone or an andropause diagnosis.</div></div></div>
+      </section>
+  <section class="section subsection" id="menopause-vs-andropause">
+    <div class="section-head"><div><div class="kicker">2.2 / Comparing midlife changes</div><h2>Menopause vs Andropause</h2></div></div>
+    <div class="grid two"><div class="card"><div class="kicker">Male midlife changes</div><h3>Andropause</h3><p><b>Hormone:</b> Testosterone decline<br><b>Onset:</b> Generally gradual<br><b>Timing:</b> Variable; material describes 40–70<br><b>Awareness:</b> Lower public recognition<br><b>Treatment:</b> Options depend on cause and individual assessment</p></div><div class="card"><div class="kicker">Female midlife changes</div><h3>Menopause</h3><p><b>Hormone:</b> Estrogen decline<br><b>Onset:</b> Transition over months or years<br><b>Timing:</b> Often around 45–55<br><b>Awareness:</b> Higher public recognition<br><b>Treatment:</b> Established options are available, depending on symptoms and suitability</p></div></div>
+  </section>
+  <section class="section subsection" id="andropause-menopause">
+    <div class="section-head"><div><div class="kicker">2.3 / Important distinction</div><h2>Andropause &amp; Menopause</h2></div></div>
+    <div>
+      <img src="m-m.jpg" alt="Illustration comparing menopause and andropause" style="width:80%;border-radius:18px;display:block;margin:auto;margin-top:18px">
+    </div>  
+  </section>
+  <section class="section subsection" id="hormone-changes">
+    <div class="section-head"><div><div class="kicker">2.4 / Beyond testosterone</div><h2>Hormones & neurotransmitter changes</h2></div><p class="section-intro">Hormonal signals interact with the brain, metabolism, sleep and stress-response systems. Wellbeing is influenced by more than one hormone.</p></div>
+    <div class="grid two"><div class="card"><h3>Human growth hormone (HGH)</h3><p>Falling HGH levels with age may affect tissue maintenance, sleep-related physiology and body composition.</p></div><div class="card"><h3>Leptin</h3><p>Leptin helps regulate appetite and energy balance. Changes in leptin signalling may influence hunger and weight regulation; the relationship is more complex than a simple decrease.</p></div><div class="card"><h3>Insulin resistance</h3><p>Reduced sensitivity to insulin can make blood-glucose regulation harder and is associated with increased metabolic health risks.</p></div><div class="card"><h3>Brain plasticity</h3><p>Changes in neural adaptability are studied in relation to ageing, mood and cognitive function. They do not alone explain depression or cognitive changes.</p></div></div>
+  </section>
+  <section class="section subsection" id="hormones">
     <div class="section-head">
-      <div><div class="kicker">01 / Practical tools</div><h2>Stress management</h2></div>
-      <p class="section-intro">Managing stress starts with noticing what activates it, then finding techniques that are practical enough to use consistently.</p>
+      <div><div class="kicker">2.5 / The connection</div><h2>Hormones, Mood and Energy</h2></div>
+    </div>
+    <article class="card cycle">
+      <div class="eyebrow">A feedback-loop concept</div>
+      <div class="cycle-diagram" aria-label="Conceptual relationship between stress and testosterone">
+        <div class="cycle-side">
+          <div class="cycle-node"><b>High stress</b><span>Stress response is activated</span></div>
+          <div class="cycle-node"><b>Reduced stress resilience</b><span>It may become harder to cope with stress</span></div>
+        </div>
+        <div class="cycle-center" role="img" aria-label="Infinity symbol representing an ongoing feedback loop"><svg viewBox="0 0 100 60" aria-hidden="true"><path d="M50 30 C35 8 8 8 8 30 C8 52 35 52 50 30 C65 8 92 8 92 30 C92 52 65 52 50 30 Z"/></svg></div>
+        <div class="cycle-side">
+          <div class="cycle-node"><b>Elevated cortisol</b><span>A key hormone in the stress response</span></div>
+          <div class="cycle-node"><b>Lower testosterone</b><span>Hormonal health may be affected</span></div>
+        </div>
+      </div>
+      <p class="section-intro" style="max-width:none">The source presentation describes a relationship between stress hormones and testosterone as a feedback loop that can affect several aspects of men's wellbeing.</p>
+      <div class="note"><strong>Important context:</strong> This is a simplified educational illustration, not a diagnostic model. Cortisol and testosterone vary naturally and are influenced by multiple factors. Symptoms alone cannot establish that testosterone is low; persistent concerns should be discussed with a qualified healthcare professional.</div>
+    </article>
+    <div><div class="kicker">Possible effects on wellbeing</div><h3 style="font-size:1.35rem;margin:5px 0 0">What might you notice?</h3></div>
+    <div class="symptoms">
+      <div class="symptom"><div class="symptom-icon">≈</div><div><b>Irritability &amp; mood swings</b><p>Increased frustration, a shorter temper, or reduced emotional regulation.</p></div></div>
+      <div class="symptom"><div class="symptom-icon">☾</div><div><b>Persistent fatigue</b><p>Feeling exhausted despite what seems like adequate sleep, or lacking physical vitality.</p></div></div>
+      <div class="symptom"><div class="symptom-icon">↘</div><div><b>Loss of motivation</b><p>Listed in the source slide as another possible effect.</p></div></div>
+      <div class="symptom"><div class="symptom-icon">✧</div><div><b>Poor sleep quality</b><p>Also identified in the source slide as a possible effect.</p></div></div>
+    </div>
+  </section>
+  <section class="section subsection" id="interconnected-system">
+    <div class="section-head"><div><div class="kicker">2.6 / See the whole picture</div><h2>The Interconnected System</h2></div></div>
+    <div class="grid four"><div class="card"><div class="number">01</div><h3>Stress triggers</h3><p>Work demands, finances, health worries and life changes.</p></div><div class="card"><div class="number">02</div><h3>Hormone balance</h3><p>Stress-response and reproductive hormones interact with broader health.</p></div><div class="card"><div class="number">03</div><h3>Mood & mind</h3><p>Emotional state, sleep, motivation and cognitive wellbeing.</p></div><div class="card"><div class="number">04</div><h3>Behaviour & coping</h3><p>Habits, relationships, help-seeking and stress-management choices.</p></div></div>
+  </section>
+  <section class="section subsection" id="key-health-influences">
+    <div class="section-head"><div><div class="kicker">2.7 / Wider context</div><h2>Key Health Influences</h2></div><p class="section-intro">Hormonal, lifestyle, identity and physical factors can all shape men's health and wellbeing.</p></div>
+    <h3 style="margin:25px 0 12px">Key health influences</h3><div class="grid four"><div class="card"><div class="kicker">Hormonal</div><p>Testosterone changes and cortisol regulation.</p></div><div class="card"><div class="kicker">Lifestyle</div><p>Work pressure, family responsibilities and finances.</p></div><div class="card"><div class="kicker">Identity</div><p>Role changes, retirement concerns and questions of purpose.</p></div><div class="card"><div class="kicker">Physical</div><p>Muscle changes, energy levels and metabolic shifts.</p></div></div>
+  </section>
+</section>
+
+  <section class="section region" id="stress-region">
+  <div class="section-head"><div><div class="kicker">3 / Understanding and managing pressure</div><h2>Stress</h2></div></div>
+  <section class="section subsection" id="stress-drivers">
+    <div class="section-head"><div><div class="kicker">3.1 / Understand the pressure</div><h2>Stress: The Hidden Driver</h2></div><p class="section-intro">When pressure becomes normal, it can be difficult to recognise when manageable demands have become chronic stress.</p></div>
+    <div class="grid three"><div class="card"><div class="number">01</div><h3>Work pressures</h3><p>Job demands, deadlines, performance expectations and the pressure to meet obligations.</p></div><div class="card"><div class="number">02</div><h3>Financial concerns</h3><p>Planning for the future, financial obligations and economic uncertainty.</p></div><div class="card"><div class="number">03</div><h3>Health worries</h3><p>Personal health, ageing and caring responsibilities.</p></div></div>
+    <div class="note"><b>Constant pressure:</b> The source material highlights men reporting that they feel under pressure all or most of the time. No numerical statistic was supplied, so none is inferred here.</div>
+  </section>
+  <section class="section subsection" id="stress-management">
+    <div class="section-head">
+      <div><div class="kicker">3.2 / Practical tools</div><h2>Stress Management</h2></div>
     </div>
     <div class="grid two">
       <article class="card">
@@ -132,40 +237,26 @@ h2{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.1;letter-spacing:-.04em;marg
         <div><h3>Make space to reset</h3><p>Choose a simple technique you can repeat: a short breathing practice, a few lines of journaling, or a conversation with a trusted person.</p></div>
       </article>
     </div>
+      <div class="card" style="margin-top:17px"><div class="kicker">A simple stress-management sequence</div><div class="steps"><div class="step"><div class="step-number">1</div><div><h3>Identify your triggers</h3><p>Notice situations, people or thoughts that reliably raise your stress levels.</p></div></div><div class="step"><div class="step-number">2</div><div><h3>Learn and use stress-management techniques</h3><p>Explore practical approaches and choose tools that fit your circumstances.</p></div></div><div class="step"><div class="step-number">3</div><div><h3>Practise consistently</h3><p>Breathing exercises, journaling and social support are examples of techniques to try.</p></div></div></div><div class="tip"><strong>Try this:</strong> Set aside 5–10 minutes for focused breathing or journaling.</div></div>
+  
   </section>
+</section>
 
-  <section class="section" id="hormones">
-    <div class="section-head">
-      <div><div class="kicker">02 / The connection</div><h2>Hormones, mood &amp; energy</h2></div>
-      <p class="section-intro">Stress physiology and reproductive hormones interact with systems involved in mood, sleep and energy.</p>
-    </div>
-    <article class="card cycle">
-      <div class="eyebrow">A feedback-loop concept</div>
-      <div class="cycle-diagram" aria-label="Conceptual relationship between stress and testosterone">
-        <div class="cycle-side">
-          <div class="cycle-node"><b>High stress</b><span>Stress response is activated</span></div>
-          <div class="cycle-node"><b>Reduced stress resilience</b><span>It may become harder to cope with stress</span></div>
-        </div>
-        <div class="cycle-center">↔</div>
-        <div class="cycle-side">
-          <div class="cycle-node"><b>Elevated cortisol</b><span>A key hormone in the stress response</span></div>
-          <div class="cycle-node"><b>Lower testosterone</b><span>Hormonal health may be affected</span></div>
-        </div>
-      </div>
-      <p class="section-intro" style="max-width:none">The source presentation describes a relationship between stress hormones and testosterone as a feedback loop that can affect several aspects of men's wellbeing.</p>
-      <div class="note"><strong>Important context:</strong> This is a simplified educational illustration, not a diagnostic model. Cortisol and testosterone vary naturally and are influenced by multiple factors. Symptoms alone cannot establish that testosterone is low; persistent concerns should be discussed with a qualified healthcare professional.</div>
-    </article>
-    <div style="margin:22px 0 14px"><div class="kicker">Possible effects on wellbeing</div><h3 style="font-size:1.35rem;margin:5px 0 0">What might you notice?</h3></div>
-    <div class="symptoms">
-      <div class="symptom"><div class="symptom-icon">≈</div><div><b>Irritability &amp; mood swings</b><p>Increased frustration, a shorter temper, or reduced emotional regulation.</p></div></div>
-      <div class="symptom"><div class="symptom-icon">☾</div><div><b>Persistent fatigue</b><p>Feeling exhausted despite what seems like adequate sleep, or lacking physical vitality.</p></div></div>
-      <div class="symptom"><div class="symptom-icon">↘</div><div><b>Loss of motivation</b><p>Listed in the source slide as another possible effect.</p></div></div>
-      <div class="symptom"><div class="symptom-icon">✧</div><div><b>Poor sleep quality</b><p>Also identified in the source slide as a possible effect.</p></div></div>
-    </div>
+  <section class="section region" id="toolkit-region">
+  <div class="section-head"><div><div class="kicker">4 / Everyday foundations</div><h2>Toolkit</h2></div></div>
+  <section class="section subsection" id="toolkit">
+    <div class="section-head"><div><div class="kicker">4.1 / Foundations for wellbeing</div><h2>The Men's Health Toolkit</h2></div><p class="section-intro">Four practical pillars can support sustainable wellbeing. The key is consistency, realistic goals and choosing habits that fit everyday life.</p></div>
+    <div class="grid two"><div class="card"><div class="number">↗</div><div class="kicker">Movement</div><h3>Exercise</h3><p>Aim for 2–3 resistance-training sessions weekly plus cardiovascular activity. Strength training supports muscle and physical function; cardio supports mood and cardiovascular health. Choose activities you enjoy so they are easier to sustain.</p></div><div class="card"><div class="number">◉</div><div class="kicker">Fuel</div><h3>Nutrition</h3><p>Eat to fuel your body and mind. Focus on whole foods, adequate protein, healthy fats and plenty of vegetables. Consistent, balanced eating can help support steady energy and mood.</p></div><div class="card"><div class="number">☾</div><div class="kicker">Recovery</div><h3>Sleep</h3><p>Aim for 7–9 hours nightly, with consistent sleep and wake times. Good sleep habits support recovery, emotional regulation and hormonal function. Rest is an investment, not an indulgence.</p></div><div class="card"><div class="number">◎</div><div class="kicker">Belonging</div><h3>Connection</h3><p>Cultivate meaningful relationships where you can be authentic. Regular connection with friends, family or support groups can provide perspective, reduce isolation and build resilience.</p></div></div>
   </section>
+  <section class="section subsection" id="mindset">
+    <div class="section-head"><div><div class="kicker">4.2 / A different perspective</div><h2>Mindset Matters</h2></div><p class="section-intro">How we think about health, strength and support can shape our willingness to make changes and ask for help.</p></div>
+    <div class="grid three"><div class="card"><div class="number">01</div><h3>Vulnerability is strength</h3><p>Being honest about struggles, seeking help when needed and showing up authentically takes courage. Resilience includes recognising when support is needed.</p></div><div class="card"><div class="number">02</div><h3>Celebrate small wins</h3><p>Sustainable change is built through accumulated small steps, not only dramatic transformations. Acknowledging progress can reinforce helpful behaviours and build momentum.</p></div><div class="card"><div class="number">03</div><h3>Practise gratitude</h3><p>A regular gratitude practice — such as noting three things each day — can help shift attention towards positive experiences and support a more balanced perspective.</p></div></div>
+  </section>
+</section>
+
+  <div class="note"><b>About this guide:</b> This page is an educational resource based on supplied notes, reorganized for readability. Some claims have been qualified where the original wording was too absolute or where evidence is more nuanced. It is not a diagnostic tool and does not replace individual medical advice. Persistent symptoms or concerns about mental or hormonal health should be discussed with a qualified healthcare professional.</div>
   <footer class="footer">
-    <span>Men's Health / Hormonal Health — visual learning resource</span>
-    <span>Educational material · Not a substitute for medical advice</span>
+    <span>Not a substitute for medical advice</span>
   </footer>
 </main>
 </body>
