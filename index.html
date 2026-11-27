@@ -643,6 +643,99 @@ img {
     scroll-behavior: auto;
   }
 }
+  
+.pressure-stat {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+  padding: 34px 38px;
+  margin-top: 24px;
+}
+
+.pressure-chart {
+  width: 180px;
+  height: 180px;
+  flex: none;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.pressure-chart svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+
+.pressure-track,
+.pressure-highlight {
+  fill: none;
+  stroke-width: 13;
+}
+
+.pressure-track {
+  stroke: #596168;
+}
+
+.pressure-highlight {
+  stroke: var(--lime);
+  stroke-dasharray: 134.04 402.12;
+  stroke-linecap: butt;
+}
+
+.pressure-chart-label {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+}
+
+.pressure-chart-label strong {
+  color: var(--lime);
+  font-size: 2.5rem;
+  font-weight: 850;
+  letter-spacing: -.06em;
+}
+
+.pressure-chart-label span {
+  color: var(--muted);
+  font-size: .9rem;
+  margin-top: 5px;
+}
+
+.pressure-copy h3 {
+  margin: 0 0 10px;
+  font-size: 1.65rem;
+}
+
+.pressure-copy p {
+  color: var(--muted);
+  margin: 0;
+  max-width: 420px;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 600px) {
+  .pressure-stat {
+    flex-direction: column;
+    text-align: center;
+    gap: 22px;
+    padding: 28px 22px;
+  }
+
+  .pressure-chart {
+    width: 155px;
+    height: 155px;
+  }
+
+  .pressure-copy h3 {
+    font-size: 1.45rem;
+  }
+}
+
 
 </style>
 </head>
@@ -769,7 +862,36 @@ img {
   <div class="section-head"><div><div class="kicker">3 / Understanding and managing pressure</div><h2>Stress</h2></div></div>
   <section class="section subsection" id="stress-drivers">
     <div class="section-head"><div><div class="kicker">3.1 / Understand the pressure</div><h2>Stress: The Hidden Driver</h2></div><p class="section-intro">When pressure becomes normal, it can be difficult to recognise when manageable demands have become chronic stress.</p></div>
-    <div class="grid three"><div class="card"><div class="number">⚒</div><h3>Work pressures</h3><p>Job demands, deadlines, performance expectations and the pressure to meet obligations.</p></div><div class="card"><div class="number">€</div><h3>Financial concerns</h3><p>Planning for the future, financial obligations and economic uncertainty.</p></div><div class="card"><div class="number">☤</div><h3>Health worries</h3><p>Personal health, ageing and caring responsibilities.</p></div></div>
+    <div class="grid three">
+      <div class="card"><div class="number">⚒</div><h3>Work pressures</h3><p>Job demands, deadlines, performance expectations and the pressure to meet obligations.</p></div>
+      <div class="card"><div class="number">€</div><h3>Financial concerns</h3><p>Planning for the future, financial obligations and economic uncertainty.</p></div>
+      <div class="card"><div class="number">☤</div><h3>Health worries</h3><p>Personal health, ageing and caring responsibilities.</p></div>
+    </div>
+    
+<div class="pressure-stat card">
+  <div class="pressure-chart" role="img"
+       aria-label="Donut chart: one third of men report feeling under pressure all or most of the time">
+    <svg viewBox="0 0 160 160" aria-hidden="true">
+      <circle
+        class="pressure-track"
+        cx="80" cy="80" r="64"
+      />
+      <circle
+        class="pressure-highlight"
+        cx="80" cy="80" r="64"
+      />
+    </svg>
+    <div class="pressure-chart-label">
+      <strong>1/3</strong>
+      <span>of men</span>
+    </div>
+  </div>
+
+  <div class="pressure-copy">
+    <h3>Constant Pressure</h3>
+    <p>Men reporting feeling under pressure all or most of the time.</p>
+  </div>
+</div>
     <div class="note"><b>Constant pressure:</b> The source material highlights men reporting that they feel under pressure all or most of the time. No numerical statistic was supplied, so none is inferred here.</div>
   </section>
   <section class="section subsection" id="stress-management">
