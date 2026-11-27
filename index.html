@@ -735,6 +735,110 @@ img {
     font-size: 1.45rem;
   }
 }
+
+.age-timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  margin-top: 36px;
+  padding-top: 0;
+}
+
+.age-timeline::before {
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: 16.66%;
+  right: 16.66%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--lime2),
+    var(--lime)
+  );
+  border-radius: 4px;
+}
+
+.age-milestone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 12px;
+}
+
+.age-label {
+  color: var(--lime);
+  font-size: 1.55rem;
+  font-weight: 850;
+  letter-spacing: -.04em;
+  margin-bottom: 13px;
+}
+
+.age-marker {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--lime);
+  border: 4px solid var(--panel2);
+  box-shadow: 0 0 0 2px var(--lime);
+  z-index: 1;
+}
+
+.age-milestone p {
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.5;
+  margin: 15px 0 0;
+  max-width: 170px;
+}
+
+@media (max-width: 600px) {
+  .age-timeline {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 28px;
+  }
+
+  .age-timeline::before {
+    top: 15px;
+    bottom: 15px;
+    left: 8px;
+    right: auto;
+    width: 3px;
+    height: auto;
+  }
+
+  .age-milestone {
+    display: grid;
+    grid-template-columns: 18px 75px 1fr;
+    align-items: center;
+    text-align: left;
+    gap: 14px;
+    padding: 0;
+  }
+
+  .age-label {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    font-size: 1.3rem;
+  }
+
+  .age-marker {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .age-milestone p {
+    grid-column: 3;
+    grid-row: 1;
+    margin: 0;
+    max-width: none;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -785,7 +889,33 @@ img {
   <div class="section-head"><div><div class="kicker">2 / Midlife and hormonal health</div><h2>Andropause</h2></div></div>
   <section class="section subsection" id="andropause-what">
     <div class="section-head"><div><div class="kicker">2.1 / Midlife hormonal health</div><h2>What is Andropause?</h2></div><p class="section-intro">Andropause is a commonly used term for age-associated changes in men's hormones and wellbeing. Unlike menopause, these changes are generally gradual and vary considerably between individuals.</p></div>
-    <div class="grid two"><div class="card"><div class="kicker">A gradual process</div><h3>Not a single moment in time</h3><p>The supplied material describes testosterone as declining by around 1–2% per year after age 30 and frames the process as unfolding over decades rather than months. The rate is not universal; individual levels and trajectories vary.</p><div class="grid three" style="margin-top:18px"><div><b style="color:var(--lime)">30+</b><p>Age-associated decline may begin</p></div><div><b style="color:var(--lime)">40–50</b><p>Changes may become noticeable for some</p></div><div><b style="color:var(--lime)">60–70</b><p>Individual experiences vary</p></div></div></div><div class="card"><div class="kicker">Possible changes</div><h3>Physical & mental effects</h3><p><b>Physical:</b> muscle loss, increased body fat and reduced energy.</p><p style="margin-top:12px"><b>Mental:</b> mood shifts, cognitive changes and irritability.</p><div class="note">These changes have many possible causes and do not, by themselves, establish low testosterone or an andropause diagnosis.</div></div></div>
+    <div class="grid two">
+      <div class="card"><div class="kicker">A gradual process</div><h3>Not a single moment in time</h3><p>The supplied material describes testosterone as declining by around 1–2% per year after age 30 and frames the process as unfolding over decades rather than months. The rate is not universal; individual levels and trajectories vary.</p>
+        
+<div class="age-timeline">
+
+  <div class="age-milestone">
+    <div class="age-label">30+</div>
+    <div class="age-marker"></div>
+    <p>Age-associated decline may begin</p>
+  </div>
+
+  <div class="age-milestone">
+    <div class="age-label">40–50</div>
+    <div class="age-marker"></div>
+    <p>Changes may become noticeable for some</p>
+  </div>
+
+  <div class="age-milestone">
+    <div class="age-label">60–70</div>
+    <div class="age-marker"></div>
+    <p>Individual experiences vary</p>
+  </div>
+
+</div>
+
+    </div>
+      <div class="card"><div class="kicker">Possible changes</div><h3>Physical & mental effects</h3><p><b>Physical:</b> muscle loss, increased body fat and reduced energy.</p><p style="margin-top:12px"><b>Mental:</b> mood shifts, cognitive changes and irritability.</p><div class="note">These changes have many possible causes and do not, by themselves, establish low testosterone or an andropause diagnosis.</div></div></div>
       </section>
   <section class="section subsection" id="menopause-vs-andropause">
     <div class="section-head"><div><div class="kicker">2.2 / Comparing midlife changes</div><h2>Menopause vs Andropause</h2></div></div>
